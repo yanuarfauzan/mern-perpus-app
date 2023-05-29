@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 
 import BukuRoute from "./routes/BukuRoute.js";
+import KategoriRoute from "./routes/KategoriRoute.js";
 
 const app = express();
 
@@ -23,5 +24,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use(BukuRoute);
+app.use(KategoriRoute);
 
 app.listen(5000, () => console.log('Server up and running...'));
