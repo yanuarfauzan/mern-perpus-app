@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import BukuList from "./components/BukuList";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AddBuku from "./components/AddBuku";
+import EditBuku from "./components/EditBuku";
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<BukuList />} />
+          <Route path="/add" element={<AddBuku />} />
+          <Route path="/edit/:id" element={<EditBuku />} />
+        </Routes>
+      </div >
+    </BrowserRouter>
   );
 }
 
