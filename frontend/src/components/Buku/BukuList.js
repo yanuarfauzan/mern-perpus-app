@@ -12,8 +12,6 @@ const BukuList = () => {
         getBukus();
     }, []);
 
-    const navigate = useNavigate();
-
     const getBukus = async () => {
         const response = await axios.get("http://localhost:5000/buku");
         setBukus(response.data);
